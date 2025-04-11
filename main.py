@@ -3,7 +3,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu 
 
 #loading saved models
-heart_disease_model = pickle.load(open('/Users/user/Desktop/codes/finals for mac/saved prediction model/heart_disease.sav', 'rb'))
+heart_disease_model = pickle.load(open('heart_disease.sav', 'rb'))
 
 
 #page title
