@@ -3,3 +3,4 @@ Pickle-mixin == 1.0.2
 Streamlit == 1.44.1
 Streamlit-option-menu == 0.4.0
 Scikit-learn == 1.6.1
+xgboost-3.0.0
