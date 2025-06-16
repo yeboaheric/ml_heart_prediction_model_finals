@@ -3,12 +3,11 @@ import streamlit as st
 from streamlit_option_menu import option_menu 
 
 #loading saved models
-heart_disease_model = pickle.load(open('heart_disease.sav', 'rb'))
+heart_disease_model = pickle.load(open('/Users/user/Desktop/codes/finals for mac/saved prediction model/heart_disease_final.sav', 'rb'))
 
 
 #page title
-#page title
-st.markdown("<h1 style='text-align: center;'> 🫀HEART DISEASE CHECKER</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'> 🫀iHEART CHECKER</h1>", unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
@@ -45,28 +44,6 @@ with col2:
 with col1:
     thal = int(st.number_input('Thalassemia (0 = normal; 1 = fixed defect; 2 = reversible defect)'.upper(), min_value=0, max_value=2))
 
-#risk factors analysis
-st.markdown("<h2 style='text-align: center;'> 🚨Risk Factors </h2>", unsafe_allow_html=True)
-
-if age >= 50:
-    st.warning("Age over 50 increases the risk of heart failure.")
-if trestbps >= 130:
-    st.warning("High resting blood pressure (130+ mmHg) idicates hypertension.")
-if chol >= 240:
-    st.warning("High cholesterol (240+ mg/dl) is a risk factor.")
-if fbs == 1:
-    st.warning("High fasting blood sugar indicates diabetes.")
-if thalach <= 100:
-    st.warning("Low max heart rate achieved is a risk factor.")
-if exang == 1:
-    st.warning("Exercise-induced angina is a risk factor.")
-if oldpeak >= 2.0:
-    st.warning("Significant ST depression (2.0+ mm) is a risk factor.")
-if ca > 0:
-    st.warning("Presence of major vessels colored by fluoroscopy is a risk factor.")
-if thal > 0:
-    st.warning("Abnormal thalassemia (fixed/reversible defect) indicates anemia.")
-
 
 
 #result
@@ -77,11 +54,11 @@ survival_diagnosis = ''
 user_input = [age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]
 
 
-if st.button('Predict 1 Year Survival'):
+if st.button('Predict Heart Disease'):
     survival_prediction = heart_disease_model.predict([user_input])
     if (survival_prediction[0] == 1):
-        survival_diagnosis = '⚠️ The patient is suffering from a heart disease and unlikely to survive beyond 1 year'
+        survival_diagnosis = "⚠️ Oops, you have a heart disease!"
     else:
-        survival_diagnosis = '✅ The patient has a normal condition and likely to survive at least 1 year.'
+        survival_diagnosis = "✅ Good news! you don't have a heart disease."
 
 st.success(survival_diagnosis)
