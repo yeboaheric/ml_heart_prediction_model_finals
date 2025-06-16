@@ -1,6 +1,6 @@
-Numpy == 1.26.4
-Pickle-mixin == 1.0.2
-Streamlit == 1.44.1
-Streamlit-option-menu == 0.4.0
-Scikit-learn == 1.6.1
-xgboost-3.0.0
+numpy==1.26.4
+pickle-mixin==1.0.2
+streamlit==1.44.1
+streamlit-option-menu==0.4.0
+scikit-learn==1.4.2
+xgboost==2.0.3
