@@ -1,6 +1,6 @@
 # iHeart Checker
 
-This is final year project web-based application that predicts the likelihood of heart disease using a Random Forest machine learning model. The system is designed to provide users with an easy-to-use interface to input clinical parameters and instantly receive prediction results.
+This is a final year project web-based application that predicts the likelihood of heart disease using a Random Forest machine learning model. The system is designed to provide users with an easy-to-use interface to input clinical parameters and instantly receive prediction results.
 
 ---
 
